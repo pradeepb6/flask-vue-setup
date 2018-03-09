@@ -6,23 +6,13 @@
   "private": true,
   "scripts": {
     "build-dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
-    "build-prod": "WEBPACK_ENV=production webpack",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "gulp"
+    "build-prod": "WEBPACK_ENV=production webpack"
   },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015"
-          ]
-        }
-      ],
-      "vueify"
-    ]
-  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "dependencies": {
     "axios": "^0.18.0",
     "node-sass": "^3.4.2",
