@@ -1,12 +1,17 @@
 'use strict';
 
-let Vue = require('vue'),
-    VueRouter = require('vue-router'),
-    axios = require('axios'),
-    VueAxios = require('vue-axios');
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 
-var app = require('App.vue').default;
-var Dashboard = require('./components/Dashboard.vue').default;
+// let Vue = require('vue'),
+//     VueRouter = require('vue-router'),
+//     axios = require('axios'),
+//     VueAxios = require('vue-axios');
+
+import App from './App.vue';
+import Dashboard from './components/Dashboard.vue';
 
 Vue.use(VueAxios, axios);
 Vue.use(VueRouter);
@@ -24,14 +29,5 @@ const router = new VueRouter({
 new Vue({
     // el: '#app',
     router,
-    template: `
-    <div id="app">
-        <div class="body-wrapper">
-            <div class="row">
-                <router-link to="/home">Go to home</router-link>
-                <router-view></router-view>
-            </div>
-        </div>
-    </div>
-  `
+    render: h => h(App)
 }).$mount('#app');
