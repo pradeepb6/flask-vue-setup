@@ -26,3 +26,6 @@ npm install
 if [ ! -f $BASEDIR/config.py ]; then
     cp $BASEDIR/config-example.py config.py
 fi
+
+# Build the Frontend files
+npm run build-prod
